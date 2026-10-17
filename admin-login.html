@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Login - HealthDesk</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2e8b57"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="HealthDesk"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================== -->
+    <!-- HEADER -->
+    <!-- ======================================== -->
+
+    <header class="top-header">
+
+        <div class="header-logo">
+
+            <img
+                src="icon-192.png"
+                alt="HealthDesk Logo"
+            >
+
+        </div>
+
+
+        <div class="header-title">
+
+            <h1>
+                HEALTHDESK
+            </h1>
+
+            <p>
+                Clinic Administrator
+            </p>
+
+        </div>
+
+
+        <button
+            id="installBtn"
+            class="install-btn"
+            type="button"
+        >
+            📱 Download App
+        </button>
+
+    </header>
+
+
+
+    <!-- ======================================== -->
+    <!-- ADMIN LOGIN -->
+    <!-- ======================================== -->
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+            <div class="auth-card">
+
+
+                <!-- MEDICAL ICON -->
+
+                <div class="medical-icon">
+                    🏥
+                </div>
+
+
+                <!-- TITLE -->
+
+                <h1>
+                    Admin Login
+                </h1>
+
+
+                <p>
+                    HealthDesk Clinic Administration
+                </p>
+
+
+
+                <!-- ======================================== -->
+                <!-- ADMIN LOGIN FORM -->
+                <!-- ======================================== -->
+
+                <form id="adminLoginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <label for="adminEmail">
+                        Admin Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        name="adminEmail"
+                        placeholder="Enter admin email"
+                        autocomplete="email"
+                        required
+                    >
+
+
+
+                    <!-- PASSWORD -->
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        name="adminPassword"
+                        placeholder="Enter admin password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+
+
+                    <!-- MESSAGE -->
+
+                    <p
+                        id="adminLoginMessage"
+                        class="form-message"
+                    ></p>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                    >
+                        Login as Admin
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- ======================================== -->
+                <!-- BACK TO STUDENT LOGIN -->
+                <!-- ======================================== -->
+
+                <p class="switch-text">
+
+                    <a
+                        href="index.html"
+                        class="link-btn"
+                    >
+                        ← Back to Student Login
+                    </a>
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+
+    <footer>
+
+        <p>
+            HealthDesk © 2026 | School Clinic
+        </p>
+
+    </footer>
+
+
+
+    <!-- ======================================== -->
+    <!-- SUPABASE -->
+    <!-- MUST LOAD BEFORE script.js -->
+    <!-- ======================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+
+    <!-- ======================================== -->
+    <!-- HEALTHDESK JAVASCRIPT -->
+    <!-- ======================================== -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- ======================================== -->
+    <!-- SERVICE WORKER -->
+    <!-- ======================================== -->
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", function () {
+
+                navigator.serviceWorker.register(
+                    "./service-worker.js"
+                );
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - HealthDesk</title>
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2e8b57"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+        <div class="header-logo">
+
+            <img
+                src="icon-192.png"
+                alt="HealthDesk Logo"
+            >
+
+        </div>
+
+
+        <div class="header-title">
+
+            <h1>
+                HEALTHDESK
+            </h1>
+
+            <p>
+                Clinic Administrator
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ADMIN NAVIGATION -->
+
+    <nav class="page-nav">
+
+        <a
+            href="admin.html"
+            class="active"
+        >
+            Admin Dashboard
+        </a>
+
+        <button
+            id="adminLogoutBtn"
+            type="button"
+        >
+            Log Out
+        </button>
+
+    </nav>
+
+
+    <!-- ADMIN MAIN CONTENT -->
+
+    <main class="admin-container">
+
+        <section class="admin-header">
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Manage school clinic appointments.
+            </p>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="admin-stats">
+
+            <div class="admin-stat">
+
+                <h3>
+                    Total Appointments
+                </h3>
+
+                <strong id="adminTotal">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <h3>
+                    Pending
+                </h3>
+
+                <strong id="adminPending">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <h3>
+                    Approved
+                </h3>
+
+                <strong id="adminApproved">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPOINTMENTS -->
+
+        <section class="admin-table-container">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        Appointments
+                    </h2>
+
+                    <p>
+                        View and manage student clinic appointments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="adminAppointments"
+                class="admin-appointments"
+            >
+
+                <p class="empty-message">
+                    Loading appointments...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- HEALTHDESK JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+    <!-- SERVICE WORKER -->
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", () => {
+
+                navigator.serviceWorker.register(
+                    "./service-worker.js"
+                );
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
